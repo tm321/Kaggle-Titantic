@@ -50,5 +50,8 @@ fit <- rpart(Survived ~ Pclass + Sex + Age + SibSp + Parch + Fare + Embarked,
                control=rpart.control(minsplit=2, cp=0))
 fancyRpartPlot(fit)
 
-
+# Feature Engineering..
+test$Survived <- NA
+combi <- rbind(train, test)
+combi$Name <- as.character(combi$Name)
 
