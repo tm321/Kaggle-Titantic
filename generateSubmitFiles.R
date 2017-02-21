@@ -38,3 +38,17 @@ library(rattle)
 library(rpart.plot)
 library(RColorBrewer)
 
+fancyRpartPlot(fit)
+Prediction <- predict(fit, test, type = "class")
+submit <- data.frame(PassengerId = test$PassengerId, Survived = Prediction)
+write.csv(submit, file = "myfirstdtree.csv", row.names = FALSE)
+
+# Submission 5 - Overfit Random Tree
+fit <- rpart(Survived ~ Pclass + Sex + Age + SibSp + Parch + Fare + Embarked,
+               data=train,
+               method="class", 
+               control=rpart.control(minsplit=2, cp=0))
+fancyRpartPlot(fit)
+
+
+
