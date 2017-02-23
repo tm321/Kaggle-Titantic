@@ -1,6 +1,6 @@
 # Trevor Stephens Titantic Kaggle tutoral
 
-setwd("~/Documents/kaggle/Titanic4/TrevorStephensTutorial")
+setwd("~/Documents/kaggle/Titanic4/Kaggle-Titantic")
 
 # load train.csv
 library(readr)
